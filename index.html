@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./styles.css">
+        <title>PowerShell Command Formatter</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>PowerShell Command Formatter</h1>
+            <p>Enter a PowerShell command to get SharePoint-compatible formatted HTML</p>
+            <p class="examples">Examples:
+                <code>New-Item -Path "C:\Temp\test.txt" -ItemType File</code>
+                <code>Get-Process -Name "chrome" -ErrorAction SilentlyContinue</code>
+            </p>
+
+            <input
+                type="text"
+                id="commandInput"
+                placeholder="Enter PowerShell command (e.g., Get-Process -Name chrome)"
+                value="New-Item -Path HelloWorld.txt -ItemType File" />
+
+            <button onclick="copyHtml()">Copy HTML</button>
+            <button onclick="copyFormatted()">Copy Formatted Text</button>
+
+            <h3>Preview:</h3>
+            <div class="preview" id="preview"></div>
+
+            <h3>Generated HTML:</h3>
+            <div class="output" id="output"></div>
+        </div>
+        <script src="./script.js"></script>
+    </body>
+</html>
