@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy to Main Site
 
 on:
   push:
@@ -12,11 +12,26 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Checkout code-to-snippet
+        uses: actions/checkout@v3
+        
+      - name: Checkout main site repository
+        uses: actions/checkout@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .
-          force_orphan: true
+          repository: Ayoobf/ayoobf.github.io
+          path: main-site
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          
+      - name: Copy files to main site
+        run: |
+          mkdir -p main-site/code-to-snippet
+          cp -r index.html styles.css script.js main-site/code-to-snippet/
+          
+      - name: Commit and push to main site
+        run: |
+          cd main-site
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add code-to-snippet
+          git commit -m "Update code-to-snippet from automated deployment"
+          git push
