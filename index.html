@@ -3,33 +3,81 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>PowerShell Snippet Formatter</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap"
+            rel="stylesheet">
         <link rel="stylesheet" href="styles.css">
-        <title>PowerShell Command Formatter</title>
-        <base href="/code-to-snippet/">
+        <meta name="description"
+            content="Convert PowerShell commands to SharePoint-compatible HTML snippets">
+        <meta name="keywords"
+            content="PowerShell, code formatter, HTML snippet, SharePoint">
     </head>
     <body>
         <div class="container">
-            <h1>PowerShell Command Formatter</h1>
-            <p>Enter a PowerShell command to get SharePoint-compatible formatted HTML</p>
-            <p class="examples">Examples:
-                <code>New-Item -Path "C:\Temp\test.txt" -ItemType File</code>
-                <code>Get-Process -Name "chrome" -ErrorAction SilentlyContinue</code>
-            </p>
+            <header>
+                <nav>
+                    <a href="../index.html" class="logo" aria-label="AF logo">
+                        <svg viewBox="0 0 9601 5505" fill="none"
+                            xmlns="http://www.w3.org/2000/svg" class="logo-svg">
+                            <path fill="#121212" d="M0 0h9601v5505H0z" />
+                            <path
+                                d="M2082.38 3843h-421.87l768.11-2181.82h487.93L3685.72 3843h-421.87l-582.74-1734.38h-17.05L2082.38 3843Zm13.85-855.47H3246.8V3305H2096.23v-317.47ZM3643.1 3843V1661.18h1397.72v331.32H4038.34v592.33h906.6v331.32h-906.6V3843H3643.1Zm1427.81 0V1661.18h395.24v1850.5h960.94V3843H5070.91Zm3233.83-1090.91c0 235.09-44.03 436.44-132.1 604.05-87.36 166.9-206.68 294.74-357.96 383.52-150.56 88.78-321.37 133.17-512.42 133.17-191.06 0-362.22-44.39-513.5-133.17-150.57-89.49-269.88-217.68-357.95-384.59-87.36-167.61-131.04-368.6-131.04-602.98 0-235.08 43.68-436.08 131.04-602.98 88.07-167.62 207.38-295.81 357.95-384.59 151.28-88.78 322.44-133.17 513.5-133.17 191.05 0 361.86 44.39 512.42 133.17 151.28 88.78 270.6 216.97 357.96 384.59 88.07 166.9 132.1 367.9 132.1 602.98Zm-397.37 0c0-165.48-25.92-305.04-77.77-418.68-51.14-114.34-122.16-200.64-213.07-258.88-90.91-58.94-195.67-88.42-314.27-88.42-118.61 0-223.37 29.48-314.28 88.42-90.91 58.24-162.29 144.54-214.13 258.88-51.14 113.64-76.71 253.2-76.71 418.68 0 165.48 25.57 305.4 76.71 419.75 51.84 113.63 123.22 199.92 214.13 258.87 90.91 58.24 195.67 87.36 314.28 87.36 118.6 0 223.36-29.12 314.27-87.36 90.91-58.95 161.93-145.24 213.07-258.87 51.85-114.35 77.77-254.27 77.77-419.75Z"
+                                fill="#fff" />
+                        </svg>
+                    </a>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="#">Snippet Creator</a></li>
+                    </ul>
+                </nav>
+            </header>
 
-            <input
-                type="text"
-                id="commandInput"
-                placeholder="Enter PowerShell command (e.g., Get-Process -Name chrome)"
-                value="New-Item -Path HelloWorld.txt -ItemType File" />
+            <main>
+                <section class="hero">
+                    <h1>PowerShell Snippet Formatter</h1>
+                    <p>Transform PowerShell commands into SharePoint-compatible
+                        HTML snippets with ease</p>
 
-            <button onclick="copyHtml()">Copy HTML</button>
-            <button onclick="copyFormatted()">Copy Formatted Text</button>
+                    <div class="command-section">
+                        <input
+                            type="text"
+                            id="commandInput"
+                            placeholder="Enter PowerShell command"
+                            value="New-Item -Path HelloWorld.txt -ItemType File"
+                            aria-label="PowerShell Command Input" />
 
-            <h3>Preview:</h3>
-            <div class="preview" id="preview"></div>
+                        <div class="cta-group">
+                            <button onclick="copyHtml()"
+                                aria-label="Copy HTML Snippet">
 
-            <h3>Generated HTML:</h3>
-            <div class="output" id="output"></div>
+                                Copy HTML
+                            </button>
+                            <button onclick="copyFormatted()"
+                                aria-label="Copy Formatted Text">
+
+                                Copy Text
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="result-section">
+                        <div class="result-container">
+                            <h3>Preview</h3>
+                            <div class="preview" id="preview"></div>
+                        </div>
+
+                        <div class="result-container">
+                            <h3>Generated HTML</h3>
+                            <div class="output" id="output"></div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <footer>
+                <p>&copy; 2024 Ayoob Florival. All rights reserved.</p>
+            </footer>
         </div>
         <script src="script.js"></script>
     </body>
