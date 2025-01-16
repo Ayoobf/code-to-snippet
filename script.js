@@ -78,12 +78,6 @@ const copyHtml = async () => {
   showCopySuccess("Copy HTML");
 };
 
-const copyFormatted = async () => {
-  const formattedText = document.getElementById("preview").textContent;
-  await navigator.clipboard.writeText(formattedText);
-  showCopySuccess("Copy Formatted Text");
-};
-
 const showCopySuccess = (buttonText) => {
   const buttons = document.querySelectorAll("button");
   const targetButton = Array.from(buttons).find(
