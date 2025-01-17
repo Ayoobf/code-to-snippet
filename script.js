@@ -12,14 +12,14 @@ const formatCommand = (command) => {
       part = part.slice(1, -1);
     }
 
-    if (part.startsWith("-")) {
-      // Parameter (red)
+    if (part.startsWith("-") || part.startsWith("/")) {
+      // Parameter (red) - handle both "-" and "/" styles
       formattedParts.push({
         text: part,
         color: "#cf222e", // GitHub light red
       });
     } else if (i === 0) {
-      // Main command - handle PowerShell Verb-Noun format
+      // Main command - handle PowerShell Verb-Noun format and regular commands
       const cmdletParts = part.split("-");
       if (cmdletParts.length > 1) {
         // Join with a non-breaking hyphen for cmdlets
@@ -33,8 +33,8 @@ const formatCommand = (command) => {
           color: "#0550ae",
         });
       }
-    } else if (parts[i - 1]?.startsWith("-")) {
-      // Parameter value (purple)
+    } else if (parts[i - 1]?.startsWith("-") || parts[i - 1]?.startsWith("/")) {
+      // Parameter value (purple) - for both parameter styles
       formattedParts.push({
         text: hasQuotes ? `"${part}"` : part,
         color: "#8250df", // GitHub light purple
