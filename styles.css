@@ -1,36 +1,5 @@
-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.75rem 1.5rem;
-  background-color: transparent;
-  color: var(--text-color);
-  text-decoration: none;
-  border: 2px solid var(--secondary-color);
-  border-radius: 50px;
-  transition: all var(--transition-speed) ease;
-  font-weight: 600;
-  min-width: 140px;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-}
 
-button::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.3);
-  opacity: 0;
-  transition: opacity 0.1s ease;
-}
-
-button:active::after {
-  opacity: 1;
-}:root {
+:root {
   --bg-color: #121212;
   --text-color: #ffffff;
   --accent-color: #cc0033;
@@ -162,7 +131,7 @@ input {
   width: 100%;
   padding: 0.75rem 1rem;
   margin-bottom: 1rem;
-  font-family: Consolas, 'Courier New', monospace;
+  font-family: Consolas, "Courier New", monospace;
   font-size: 16px;
   background-color: rgba(255, 255, 255, 0.05);
   border: 2px solid var(--secondary-color);
@@ -248,28 +217,6 @@ button.success svg {
   }
 }
 
-button.success {
-  background-color: var(--accent-color);
-  border-color: var(--accent-color);
-  color: white;
-}
-
-button.success svg {
-  stroke: white;
-  animation: checkmark 0.5s ease forwards;
-}
-
-@keyframes checkmark {
-  0% {
-    stroke-dashoffset: 24;
-    fill: transparent;
-  }
-  100% {
-    stroke-dashoffset: 0;
-    fill: white;
-  }
-}
-
 .result-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -291,8 +238,9 @@ button.success svg {
   color: var(--text-color);
 }
 
-.preview, .output {
-  font-family: Consolas, 'Courier New', monospace;
+.preview,
+.output {
+  font-family: Consolas, "Courier New", monospace;
   min-height: 100px;
   overflow-x: auto;
   font-size: 14px;

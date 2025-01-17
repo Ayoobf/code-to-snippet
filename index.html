@@ -3,15 +3,16 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>PowerShell Snippet Formatter</title>
+        <title>SharePoint Code Formatter</title>
         <link
             href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap"
             rel="stylesheet">
         <link rel="stylesheet" href="styles.css">
         <meta name="description"
-            content="Convert PowerShell commands to SharePoint-compatible HTML snippets">
+            content="Convert code snippets into SharePoint-compatible HTML for clean, consistent documentation">
         <meta name="keywords"
-            content="PowerShell, code formatter, HTML snippet, SharePoint">
+            content="SharePoint, code formatter, documentation, HTML snippet, PowerShell, code documentation">
+
     </head>
     <body>
         <div class="container">
@@ -35,9 +36,8 @@
 
             <main>
                 <section class="hero">
-                    <h1>PowerShell Snippet Formatter</h1>
-                    <p>Transform PowerShell commands into SharePoint-compatible
-                        HTML snippets with ease</p>
+                    <h1>SharePoint Code Formatter</h1>
+                    <p>Transform your code into SharePoint-compatible snippets for clean, consistent documentation</p>
 
                     <div class="command-section">
                         <input
@@ -48,9 +48,8 @@
                             aria-label="PowerShell Command Input" />
 
                         <div class="cta-group">
-                            <button onclick="copyHtml()"
-                                aria-label="Copy HTML Snippet">
-
+                            <button id="copyHtmlBtn" onclick="copyHtml()"
+                                aria-label="Copy HTML">
                                 Copy HTML
                             </button>
                         </div>

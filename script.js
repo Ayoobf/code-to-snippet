@@ -78,13 +78,10 @@ const copyHtml = async () => {
   showCopySuccess("Copy HTML");
 };
 
-const showCopySuccess = (buttonText) => {
-  const buttons = document.querySelectorAll("button");
-  const targetButton = Array.from(buttons).find(
-    (button) => button.textContent === buttonText
-  );
+const showCopySuccess = () => {
+  const targetButton = document.getElementById("copyHtmlBtn");
   if (targetButton) {
-    const originalText = targetButton.textContent;
+    const originalText = targetButton.textContent.trim();
     targetButton.textContent = "Copied!";
     targetButton.classList.add("success");
     setTimeout(() => {
